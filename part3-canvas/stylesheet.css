@@ -1,0 +1,67 @@
+/*
+ * Copyright 2013 Google Inc.
+ *
+ *   Licensed under the Apache License, Version 2.0 (the "License");
+ *   you may not use this file except in compliance with the License.
+ *   You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *   Unless required by applicable law or agreed to in writing, software
+ *   distributed under the License is distributed on an "AS IS" BASIS,
+ *   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *   See the License for the specific language governing permissions and
+ *   limitations under the License.
+ *
+ *   Author: Martin Gorner (mgorner@google.com)
+ */
+
+html, body
+{
+	width: inherit;
+    height: inherit;
+}
+
+.canvas
+{
+	top:10px;
+	left: 10px;
+}
+
+.movable
+{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+#cap-click
+{
+    left: 830px;
+    top: 310px;
+    opacity: 1;
+}
+#cap-ohno
+{
+    left: 820px;
+    top: 40px;
+}
+#cap-reload
+{
+    left: 60px;
+    top: 310px;
+}
+#cap-click, #cap-reload, #cap-ohno
+{
+    z-index:-1;
+}
+#cap-click.end
+{
+	opacity: 0;
+}
+#cap-title
+{
+    margin-top: 50px;
+    margin-left: 20px;
+
+}

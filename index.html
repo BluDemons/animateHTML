@@ -1,0 +1,302 @@
+<!DOCTYPE HTML>
+<!--
+  Copyright 2013 Google Inc.
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+    Author: Martin Gorner (mgorner@google.com)
+  -->
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<title>Animate Your HTML5</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono">
+    <script type="text/javascript" src="prescommon/prefixfree.min.js" ></script>
+    <style type="text/css">
+        .tile
+        {
+            position: absolute;
+            width: 270px;
+            height: 270px;
+        }
+        .title2
+        {
+            position: absolute;
+            width: 810px;
+            left: 1111px;
+            top: 10px;
+            margin: 10px;
+            transform-origin: 0% 0%;
+            transform: rotate(90Deg);
+        }
+        body
+        {
+            width: 100%;
+            margin: 0px;
+        }
+        .center-container-margin
+        {
+            width: 720px;
+            margin-top: 10px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .center-container
+        {
+            width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .screen
+        {
+            position: absolute;
+            width: 740px;
+            height: 1760px; /* horrible: replace with transparent png */
+            left: 50%;
+            top: 0px;
+            margin-left: -370px;
+            background-color: white;
+            opacity: 0.85;
+            z-index: -1;
+        }
+        .center-tile
+        {
+            position: relative;
+            width: 270px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .small-tile
+        {
+            width: 200px;
+        }
+        .flags
+        {
+            /* free flags from Icon Drawer: http://www.printableworldflags.com/flag-icon */
+            position: absolute;
+            left: 275px;
+            width: 35px;
+        }
+        .codelab-explanations
+        {
+            font-family: "Open Sans", sans-serif;
+            color: black;
+            text-shadow: none;
+            font-weight: normal;
+            font-size: 12pt;
+            font-variant: normal;
+        }
+        .codelab-explanations a:link
+        {
+            color: blue;
+            text-decoration: none;
+        }
+        .codelab-explanations a:hover
+        {
+            text-decoration: underline;
+        }
+        .codelab-explanations a:visited
+        {
+            color: purple;
+        }
+        .arrow
+        {
+            margin: 0px;
+            vertical-align: -3px;
+            font-size: x-large;
+        }
+        .cep
+        {
+            margin-bottom: 10px;
+            margin-top: 1px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        .cel
+        {/*column*/
+            margin-bottom: 1px;
+            margin-top: 1px;
+            margin-left: 10px;
+            margin-right: 10px;
+            line-height: 1.2em;
+        }
+        .ces
+        {/*small*/
+            font-size: 11pt;
+        }
+        .cef
+        {/*footer*/
+            text-align: center;
+            font-size: 10pt;
+        }
+        .cet
+        {
+            font-size: 20pt;
+            font-weight: normal;
+            margin-top: 1px;
+            margin-bottom: 10px;
+            color: #606060;
+        }
+        HR
+        {
+            width: 80%;
+            border: 0;
+            height: 1px;
+            background: #606060;
+            background-image: linear-gradient(left, #ccc, #606060, #ccc);
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        table
+        {
+        	border: none;
+        	border-collapse: collapse;
+        	width: 100%;
+        	margin-top: 15px;
+        	margin-bottom: 0px;
+        }
+        table tr td
+        {
+        	border: none;
+        	margin: 0;
+        	padding: 0;
+        }
+    </style>
+</head>
+<body><div class="screen" ></div>
+    <div class="center-container-margin">
+        <div class="center-container">
+            <div class="caption title center" style="letter-spacing: 3px; word-spacing: 7px">Animate Your HTML5</div>
+            <H1 class="codelab-explanations cet center" style="font-size: 25px;">A tour of HTML5 animation techniques
+                <div style="line-height: 1.3em">
+                    with CSS3, SVG, Canvas and WebGL
+                </div>
+            </H1>
+            <br/>
+            <div style="line-height: 0.9em; text-align: center" class="center-tile caption"><a href="pres/index.html"><img src="images/tile_user.png" /></a>
+                <a href="pres/index.html?lang=pt"><img style="top: 60px" title="Brazilian Portuguese" class="flags" src="prescommon/images/flag-pt.png" /></a>
+                <a href="pres/index.html?lang=fr"><img style="top: 30px" title="French" class="flags" src="prescommon/images/flag-fr.png" /></a>
+                <a href="pres/index.html?lang=en"><img style="top: 0px" title="English" class="flags" src="prescommon/images/flag-us.png" />
+                presentation</a>
+            </div>
+            <br/>
+
+            <hr style="clear: both" />
+
+            <div class="codelab-explanations">
+                <H1 class="cet">Codelab part 1 and 2: CSS3 and CSS3 3D</H1>
+                <a href="part1-css3/index.html"><img class="small-tile" src="images/tile_world.png" /></a>
+                <a href="part2-css3-3D/index.html"><img class="small-tile" src="images/tile_computer.png" /></a>
+                <div class="codelab-explanations" style="width:260px; vertical-align: top; display: inline-block;">
+                    <div class="cep">CSS3 have animations built in. Javascript is not required anymore, even for 3D animations.</div>
+                    
+                    <div class="cep">Codelab duration: 1h + 1h</div>
+
+                    <div class="cep" style="line-height: 1.2em">
+                        <span class="arrow caption">➛ </span><a href="#setup">Codelab preparation</a><br/>
+                        <span class="arrow caption">➛ </span><a href="codelab-instructions/AnimateYHTML5-EN-part-1-2-css3-instructions.pdf"><b>Codelab instructions</b></a><br/>
+                        <span class="arrow caption">➛ </span><a href="part1-css3/index.html">Demo 2D</a>, <a href="part2-css3-3D/index.html">Demo 3D</a> 
+                    </div>
+                </div>
+            </div>
+
+            <hr style="clear: both" />
+
+            <a href="part3-canvas/index.html"><img style="float: right" class="small-tile" src="images/tile_game.png" /></a>
+            <div class="codelab-explanations">
+                <H1 class="cet">Codelab part 3: Canvas + Box2Dweb.js</H1>
+                <div style="width:480px;">
+                <div class="cep">The HTML5 Canvas is the ideal solution when you need to compute the animation frame by frame, for example when using a Newtonian physics model (Box2Dweb.js)</div>
+                
+                <br/>
+                <table><tr><td>
+                   <p class="cel">
+                   <span class="arrow caption">➛ </span><a href="#setup">Codelab preparation</a><br/>
+                   <span class="arrow caption">➛ </span><a href="codelab-instructions/AnimateYHTML5-EN-part-3-canvas-instructions.pdf">Codelab instructions</a>
+                   </p>
+                </td>
+                <td>
+                   <p class="cel">
+                   <span class="arrow caption">➛ </span><a href="part3-canvas/index.html">Demo</a><br/>
+                   Codelab duration: 2h
+                   </p>
+                </td></tr></table>
+                </div>
+            </div>
+
+            <hr style="clear: both" />
+
+            <div class="codelab-explanations">
+                <a href="part4-webgl/index.html"><img style="float: left" class="small-tile" src="images/tile_browser.png"/></a>
+                <H1 class="cet">&nbsp;Codelab part 4: WebGL + Three.js</H1>
+                
+                <div style="display: inline-block; width:495px; vertical-align: top">
+                    <div class="cep">
+                        Full, hardware-accelerated 3D is now available in Chrome and
+                        Firefox through WebGL. Thanks to the Three.js library,
+                        there is no need to be a shader expert to obtain
+                        spectacular results.
+                    </div>
+                    
+                    <br/>
+                    <table><tr><td>
+                       <p class="cel">
+                       <span class="arrow caption">➛ </span><a href="#setup">Codelab preparation</a><br/>
+                       <span class="arrow caption">➛ </span><a href="codelab-instructions/AnimateYHTML5-EN-part-4-webgl-instructions.pdf">Codelab instructions</a>
+                       </p>
+                    </td>
+                    <td>
+                       <p class="cel">
+                       <span class="arrow caption">➛ </span><a href="part4-webgl/index.html">Demo</a><br/>
+                       Codelab duration: 2h
+                       </p>
+                    </td></tr></table>
+                        
+                </div>
+            </div>
+
+            <hr style="clear: both" />
+
+            <H1 class="codelab-explanations cet"><a name="setup" ></a>Codelab setup instructions</H1>
+            <div class="codelab-explanations ces">
+                <ol>
+                <li>Make sure you have a text editor that offers CSS and javascript validation as you type.</li>
+                <li>Download ans install the latest <a href="http://www.google.com/chrome">public version of Chrome</a>.</li>
+                <li>For the WebGL codelab, you must have a local HTTP server. See <a href="https://github.com/mrdoob/three.js/wiki/How-to-run-things-locally">instructions here.</a></li>
+                <li>Download the <a href="AnimateYourHTML5codelab.zip">ZIP of this codelab</a>.
+                <li>Unzip it and locate the files named <kbd><b>"partXXX playground.html/.css/.js"</b></kbd> corresponding to your codelab.
+                    They are set up for you to start coding.
+                    Follow the codelab instructions in the <kbd>"codelab-instructions"</kbd> folder.
+                    You will find useful images and textures in the <kbd>"images"</kbd> and <kbd>"textures"</kbd> folders. Enjoy!
+
+                </ol>
+            </div>
+
+            <hr style="width: 100%; margin-top: 50px; margin-bottom: 5px"/>
+
+            <div class="codelab-explanations cef"">
+
+                <div>Artwork inspired from "Vibrant" Chrome theme by <a href="http://www.fernandovt.com/">Fernando Volken Togni</a></div>
+                <div>Author : <a href="https://plus.google.com/113532596314034732476/posts">Martin Gorner</a> - Google developer relations - <a href="https://plus.google.com/113532596314034732476/posts">follow me on G+</a></div>
+                <div>The code is available on <a href="http://code.google.com/p/animateyourhtml5/">code.google.com</a></div>
+                <div><a href="https://developers.google.com/">developers.google.com</a></div>
+                <div><a href="http://www.html5rocks.com/">www.html5rocks.com</a></div>
+                <br/>
+                <div>➛ A <a href="pres-css3-svg/index.html">different version of the presentation</a> with a narrower focus on CSS3 and SVG.</div>
+            </div>
+
+        </div>
+    </div>
+</body>
